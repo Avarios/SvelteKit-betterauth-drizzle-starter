@@ -18,23 +18,20 @@
 </script>
 
 <div
-	class="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8"
+	class="min-h-screen bg-linear-to-br from-indigo-50 via-white to-cyan-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8"
 >
 	<div class="sm:mx-auto sm:w-full sm:max-w-md">
 		<div class="flex justify-center mb-8">
-			<div class="p-4 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-lg">
+			<div class="p-4 bg-linear-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-lg">
 				<CalendarDays class="h-10 w-10 text-white" />
 			</div>
 		</div>
 
 		<h2
-			class="text-center text-4xl font-bold bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900 bg-clip-text text-transparent mb-2"
+			class="text-center text-4xl font-bold bg-linear-to-br from-gray-900 via-indigo-900 to-gray-900 bg-clip-text text-transparent mb-2"
 		>
-			Create your business account
+			Create your Account
 		</h2>
-		<p class="text-center text-gray-600 mb-8">
-			Start managing appointments for your business today
-		</p>
 	</div>
 
 	<form
@@ -100,7 +97,7 @@
 						/>
 					</label>
 				</div>
-				<Button primary centered disabled={isFormError}>Create Business Account</Button>
+				<Button primary centered disabled={isFormError}>Create</Button>
 			</div>
 		</div>
 	</form>
