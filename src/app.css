@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+@import '@fontsource/fira-mono';
+
+/* Tailwind v4 theme configuration */
+@theme reference {
+  --color-blue-25: #f8fafc;
+}
+
