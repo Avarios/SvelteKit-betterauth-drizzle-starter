@@ -12,7 +12,7 @@ export const registerBusinessUser = form(registerSchema, async (data, invalid) =
          invalid(x.message);
       });
    } else {
-      let result = await authClient.signUp.email({ email: data.email, name: data.name, password: data.password, role:'owner' });
+      let result = await authClient.signUp.email({ email: data.email, name: data.name, password: data.password});
       if (result.error) {
          invalid(result.error.message || 'Something went wrong');
       } else {
