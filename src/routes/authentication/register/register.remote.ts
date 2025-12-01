@@ -1,24 +1,13 @@
 import { form } from '$app/server';
-import * as v from 'valibot'
 import { registerSchema } from './register.schema';
 import { authClient } from '$lib/authentication'
+import { redirect, error } from '@sveltejs/kit';
 
-export const registerBusinessUser = form(registerSchema, async (data, invalid) => {
-   let result = v.safeParse(registerSchema, data);
-  
-   if (!result.success) {
-      result.issues.forEach(x => {
-         const fieldPath = x.path?.map(item => item.key).join('.') || 'form';
-         invalid(x.message);
-      });
+export const registerUser = form(registerSchema, async (data, issues) => {
+   let result = await authClient.signUp.email({ email: data.email, name: data.email, password: data.password });
+   if (result.error) {
+      error(result.error.status, result.error.message)
    } else {
-      let result = await authClient.signUp.email({ email: data.email, name: data.name, password: data.password});
-      if (result.error) {
-         invalid(result.error.message || 'Something went wrong');
-      } else {
-         return {
-            success: true
-         }
-      }
+      redirect(302, "/")
    }
 });
